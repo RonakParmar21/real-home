@@ -211,7 +211,8 @@ section {
     font-size: 1.2rem;
 }
 
-.navbar-list .navbar-item>a span:after {
+.navbar-list .navbar-item>a span:after,
+.res-nav-display ul li > a span:after {
     content: '';
     background-color: var(--gray);
     height: 2px;
@@ -220,7 +221,8 @@ section {
     transition: 0.5s ease-in-out;
 }
 
-.navbar-list .navbar-item>a span:hover:after {
+.navbar-list .navbar-item>a span:hover:after,
+.res-nav-display ul li > a span:after {
     content: '';
     background-color: var(--gray);
     height: 2px;
@@ -254,6 +256,7 @@ section {
 
 .login, .bar {
     display: flex;
+    /* position: fixed; */
 }
 
 .login button {
@@ -264,6 +267,7 @@ section {
     font-size: 1.2rem;
     cursor: pointer;
     display: none;
+    /* position: fixed; */
 }
 
 
@@ -322,6 +326,173 @@ section {
     font-size: 1.3rem;
 }
 
+/* .res-nav-display {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    box-shadow: var(--shadow-1);
+    height: 100%;
+    z-index: 999;
+    border: 1px solid red;
+    background-color: black;
+    margin-top: 160px;
+    margin-right: -90px;
+    right: 0;
+} */
+
+.res-nav-display {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh; 
+    background-color: var(--black);
+    z-index: 999;
+}
+
+
+.login i {
+    display: none;
+}
+
+.res-nav-display {
+    display: none;
+}
+
+.res-nav-display #bar-cross {
+    display: flex;
+    color: white;
+    top: 0;
+    left: 0;
+    justify-content: right;
+}
+
+.res-nav-display #bar-cross {
+    font-size: 1.5rem;
+    padding: 20px;
+    margin-top: -300px;
+    margin-left: -250px;
+}
+
+.res-nav-display .navbar-list-res ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;  
+    width: 250px;
+}
+
+.res-nav-display ul li a {
+    color: white;
+}
+
+.social-medias-icon ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    /* flex-direction: column; */
+}
+
+.social-medias-icon ul li {
+    width: 30px;
+    height: 30px;
+    /* border: 1px solid blue; */
+    padding: 3px 8px;
+}
+
+.res-nav-display .button {
+    /* margin: 10px 20px; */
+    width: 280px;
+}
+
+
+
+
+.deal-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 0px 10%; */
+}
+
+.deal-section .top,
+.deal-section .bottom {
+    padding: 0px 10%;
+}
+
+.deal-section .top {
+    /* border: 1px solid red; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 50vh; */
+}
+
+.deal-section .top .heading {
+    font-size: 1.5rem;
+    width: 30%;
+    font-weight: 700;
+    text-align: right;
+}
+
+.deal-section .top .details {
+    width: 70%;
+    padding: 0 20px;
+}
+
+
+.deal-section .bottom {
+    /* height: 50vh; */
+    /* background-color: rgb(228, 228, 228); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deal-section .bottom .deal-lists {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+}
+
+.deal-section .bottom .deal-lists .deal-item {
+    padding: 0px 20px;
+    text-align: center;
+}
+
+.deal-section .bottom .deal-lists .deal-item i {
+    font-size: 3rem;
+    padding: 10px;
+}
+
+.deal-section .bottom .deal-lists .deal-item h1 {
+    font-size: 1.1rem;
+}
+
+.deal-section .bottom .deal-lists .deal-item p {
+    font-size: 0.8rem;
+}
+
+#features {
+    background-color: rgb(217, 217, 217);
+}
+
+
+
+
+
+
+
+
+/* 
+.deal-section .buttom {
+    background-color: black;
+    width: 100%;
+} */
 
 
 
@@ -339,6 +510,144 @@ section {
     .login .button {
         display: block;
 
+    }
+
+    .login i {
+        display: none;
+    }
+
+    .res-nav-display {
+        display: none;
+    }
+}
+
+@media (max-width: 1020px) {
+    .navbar-item a span {
+        font-size: 1rem;
+        /* color: red; */
+    }
+
+    .login i {
+        display: none;
+    }
+}
+
+@media (max-width: 940px) {
+    .nav-logo h1 {
+        display: flex;
+        font-size: 1.5rem;
+    }
+
+    .login {
+        display: flex;
+        /* gap: 10px; */
+    }
+
+    .login i {
+        padding: 10px;
+        display: block;
+        font-size: 1.5rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login i:last-child {
+        display: none;
+    }
+
+    .navbar-list {
+        display: none; /* Hide default navbar on small screens */
+    }
+
+    .res-nav-display {
+        display: none; /* Initially hidden, shown by JS */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .deal-section .bottom .deal-lists .deal-item i {
+        font-size: 2.5rem;
+        padding: 10px;
+    }
+
+    .deal-section .bottom .deal-lists .deal-item h1 {
+        font-size: 1rem;
+    }
+    
+    .deal-section .bottom .deal-lists .deal-item p {
+        font-size: 0.8rem;
+        overflow: hidden;
+    }
+
+
+
+
+
+
+
+
+
+    .hero .hero-texts {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        margin-top: -40%;
+    }
+}
+
+@media (max-width:720px) {
+    .hero .hero-texts {
+        margin-top: -90%;
+    }
+
+    .deal-section .top {
+        flex-direction: column;
+    }
+
+    .deal-section .top .heading {
+        /* border: 1px solid red; */
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 0;
+        font-size: 1rem;
+    }
+
+    .deal-section .top .details {
+        width: 100%;
+    }
+
+    .deal-section {
+        /* height: 200vh; */
+        margin-top: 20px;
+    }
+
+    .deal-section .bottom .deal-lists {
+        flex-direction: column;
+    }
+
+    .deal-section .bottom .deal-lists .deal-item i {
+        font-size: 2.5rem;
+        padding: 10px;
+    }
+
+    .deal-section .bottom .deal-lists .deal-item h1 {
+        font-size: 1rem;
+    }
+    
+    .deal-section .bottom .deal-lists .deal-item p {
+        font-size: 0.8rem;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 310px) and (max-width: 720) {
+    .hero .hero-texts {
+        margin-top: -100%;
     }
 }
 
