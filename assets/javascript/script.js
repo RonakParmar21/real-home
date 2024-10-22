@@ -20,6 +20,28 @@ cross.addEventListener("click", () => {
 
 
 
+// model up
+
+const closeForm = document.querySelector('.closeform');
+const showModel = () => {
+
+    document.querySelector('.overlay').classList.add('showOverlay')
+    document.querySelector('.loginform').classList.add('showLoginForm')
+
+}
+
+closeForm.addEventListener("click", () => {
+    
+    document.querySelector('.overlay').classList.remove('showOverlay')
+    document.querySelector('.loginform').classList.remove('showLoginForm')
+
+})
+
+
+
+
+
+
 
 
 
